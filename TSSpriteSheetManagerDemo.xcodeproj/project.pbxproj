@@ -138,6 +138,7 @@
 		E231D73215C7C75F009B2FB8 /* LICENSE_cocos2d.txt in Resources */ = {isa = PBXBuildFile; fileRef = E231D6C915C7C75F009B2FB8 /* LICENSE_cocos2d.txt */; };
 		E231D73315C7C75F009B2FB8 /* LICENSE_CocosDenshion.txt in Resources */ = {isa = PBXBuildFile; fileRef = E231D6CA15C7C75F009B2FB8 /* LICENSE_CocosDenshion.txt */; };
 		E231D73415C7C75F009B2FB8 /* LICENSE_Kazmath.txt in Resources */ = {isa = PBXBuildFile; fileRef = E231D6CB15C7C75F009B2FB8 /* LICENSE_Kazmath.txt */; };
+		E231D73C15C7C7E5009B2FB8 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E231D73B15C7C7E5009B2FB8 /* MainLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -405,6 +406,8 @@
 		E231D6C915C7C75F009B2FB8 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		E231D6CA15C7C75F009B2FB8 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		E231D6CB15C7C75F009B2FB8 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		E231D73A15C7C7E5009B2FB8 /* MainLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
+		E231D73B15C7C7E5009B2FB8 /* MainLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,10 +468,12 @@
 			children = (
 				E20B0C1815C7B96F0052AA0C /* AppDelegate.h */,
 				E20B0C1915C7B96F0052AA0C /* AppDelegate.m */,
-				E20B0C1B15C7B96F0052AA0C /* HelloWorldLayer.h */,
-				E20B0C1C15C7B96F0052AA0C /* HelloWorldLayer.m */,
 				E20B0C1E15C7B96F0052AA0C /* IntroLayer.h */,
 				E20B0C1F15C7B96F0052AA0C /* IntroLayer.m */,
+				E20B0C1B15C7B96F0052AA0C /* HelloWorldLayer.h */,
+				E20B0C1C15C7B96F0052AA0C /* HelloWorldLayer.m */,
+				E231D73A15C7C7E5009B2FB8 /* MainLayer.h */,
+				E231D73B15C7C7E5009B2FB8 /* MainLayer.m */,
 				E20B0C2615C7B9FD0052AA0C /* TSSpriteSheetManager */,
 				E231D5D815C7C75F009B2FB8 /* libs */,
 				E20B0AA115C7B96C0052AA0C /* Resources */,
@@ -1031,6 +1036,7 @@
 				E231D72F15C7C75F009B2FB8 /* vec2.c in Sources */,
 				E231D73015C7C75F009B2FB8 /* vec3.c in Sources */,
 				E231D73115C7C75F009B2FB8 /* vec4.c in Sources */,
+				E231D73C15C7C7E5009B2FB8 /* MainLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
