@@ -87,11 +87,6 @@ static TSSpriteSheetManager *singletonDelegate = nil;
     
     // Add the spritesheet to the spriteFrameCache.
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:spriteSheetFilename];
-    
-    // Create a batchnode for this spritesheet and add it to the dictionary.
-    NSString *textureFilename =[NSString stringWithFormat:@"%@.%@", [spriteSheetFilename stringByDeletingPathExtension], textureFormat];
-    [spriteSheets setObject:[NSNumber numberWithInt:currentTag] forKey:textureFilename];
-    currentTag++;
 }
 
 -(CCSprite*) spriteWithFileOrFrame:(NSString*)filename {

@@ -30,7 +30,6 @@
 		E20B0ABA15C7B96D0052AA0C /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E20B0AB915C7B96D0052AA0C /* iTunesArtwork */; };
 		E20B0C1715C7B96F0052AA0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B0C1615C7B96F0052AA0C /* main.m */; };
 		E20B0C1A15C7B96F0052AA0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B0C1915C7B96F0052AA0C /* AppDelegate.m */; };
-		E20B0C1D15C7B96F0052AA0C /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B0C1C15C7B96F0052AA0C /* HelloWorldLayer.m */; };
 		E20B0C2015C7B96F0052AA0C /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B0C1F15C7B96F0052AA0C /* IntroLayer.m */; };
 		E20B0C2915C7B9FD0052AA0C /* TSSpriteSheetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E20B0C2815C7B9FD0052AA0C /* TSSpriteSheetManager.m */; };
 		E231D6CC15C7C75F009B2FB8 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E231D5DB15C7C75F009B2FB8 /* CCAction.m */; };
@@ -183,8 +182,6 @@
 		E20B0C1615C7B96F0052AA0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E20B0C1815C7B96F0052AA0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E20B0C1915C7B96F0052AA0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E20B0C1B15C7B96F0052AA0C /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		E20B0C1C15C7B96F0052AA0C /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		E20B0C1E15C7B96F0052AA0C /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		E20B0C1F15C7B96F0052AA0C /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		E20B0C2715C7B9FD0052AA0C /* TSSpriteSheetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSpriteSheetManager.h; sourceTree = "<group>"; };
@@ -498,8 +495,6 @@
 				E20B0C1915C7B96F0052AA0C /* AppDelegate.m */,
 				E20B0C1E15C7B96F0052AA0C /* IntroLayer.h */,
 				E20B0C1F15C7B96F0052AA0C /* IntroLayer.m */,
-				E20B0C1B15C7B96F0052AA0C /* HelloWorldLayer.h */,
-				E20B0C1C15C7B96F0052AA0C /* HelloWorldLayer.m */,
 				E231D73A15C7C7E5009B2FB8 /* MainLayer.h */,
 				E231D73B15C7C7E5009B2FB8 /* MainLayer.m */,
 				E20B0C2615C7B9FD0052AA0C /* TSSpriteSheetManager */,
@@ -998,7 +993,6 @@
 			files = (
 				E20B0C1715C7B96F0052AA0C /* main.m in Sources */,
 				E20B0C1A15C7B96F0052AA0C /* AppDelegate.m in Sources */,
-				E20B0C1D15C7B96F0052AA0C /* HelloWorldLayer.m in Sources */,
 				E20B0C2015C7B96F0052AA0C /* IntroLayer.m in Sources */,
 				E20B0C2915C7B9FD0052AA0C /* TSSpriteSheetManager.m in Sources */,
 				E231D6CC15C7C75F009B2FB8 /* CCAction.m in Sources */,

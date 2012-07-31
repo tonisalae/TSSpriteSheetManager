@@ -1,69 +1,56 @@
-## TSMiniWebBrowser - In-App web browser control for iOS apps
+## TSSpriteSheetManager - Easily manage sprite sheets on Cocos2d
 
-There are already some solutions to this problem out there but non of them offers this features. First, this solution solves the well-known **UIWebView bug** that causes erratic behavior when combining "zooming operations" and "landscape orientation". Moreover, the solution presented is **highly customizable**.
+TSSpriteSheetManager is a singleton cocos2d class that allows for easily manage sprite sheets. You just add sprite sheets to the manager and then request a sprite or frame automatically batched for you. The manager will search for the sprite in all the added sprite sheets and if it is not in any of them, it will search for individual files on your project.
 
 More about me at [IndieDevStories.com](http://indiedevstories.com)
 
-[![Alt][screenshot1_thumb]][screenshot1]    [![Alt][screenshot2_thumb]][screenshot2]    [![Alt][screenshot3_thumb]][screenshot3]
-[screenshot1_thumb]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_01_thumb.png
-[screenshot1]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_01.png
-[screenshot2_thumb]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_02_thumb.png
-[screenshot2]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_02.png
-[screenshot3_thumb]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_03_thumb.png
-[screenshot3]: http://dl.dropbox.com/u/7604222/GitHub/TSMiniWebBrowser/shot_03.png
+## Motivation
+
+I usually start my game projects by prototyping without using sprite sheets from the very beginning of the development process. This allows me to make quick changes by just swapping files.
+
+However, sooner or later you will need to start using sprite sheets on your game (you know, performance). The process to switch to individual images to sprite sheets could be a pain in some circumstances.
+
+On the other hand, it is usually recommended to use sprite sheets with cocos2d batching mechanism. This way, you can take advantage of the fact that all the frames of your game assets are in the same texture (or a few of them). This way, you can reduce considerably the draw calls and, therefore, the overall performance of your game.
+
+So, to solve both problems in one shoot I coded this little singleton class called **TSSpriteSheetManager**.
 
 ## Features
 
-TSMiniWebBrowser offers the following **features**:
+TSSpriteSheetManager offers the following **features**:
 
-* Back and forward buttons
-* Reload button (*optional*)
-* Activity indicator while page is loading
-* Action button to open the current page in Safari (*optional*)
-* Displays the page title at the navigation bar (*optional*)
-* Displays the current URL at the top of the “Open in Safari” action sheet (*optional*)
-* Customizable bar style: default, black, black translucent.
-
-As you can see, there are some items that are “optional”. That means that you can configure the browser to display or not those items, depending on your app needs.
-
-Moreover, TSMiniWebBrowser **supports 3 presentation modes**:
-
-* **Navigation controller mode**. Using this mode you can push the browser to your navigation controller.
-* **Modal mode**. Using this mode you can present the browser modally. A title bar with a dismiss button will be automatically added.
-* **Tab bar mode**. Using this mode you can show the browser as a tab of a tab bar view controller. The toolbar with the navigation controls will be positioned at the top of the view automatically.
+* **One single method to create `CCSprites` from a sprite sheet or a single image.** This is very useful to switch from individual image files to sprite sheets. You tipically start your protoypes with individual files to test rapidly. TSSpriteSheetManager makes switching to sprite sheets a painless process.
+* **Automatic batching.** TSSpriteSheetManager creates automatically `CCSpriteBatchNodes` when necessary. This allows for reducing the draw calls automatically.
+* Supports **iPhone, iPhone Retina, iPad and iPad Retina** sprite sheets
 
 ## Usage
 
-If you are OK with the **TSMiniWebBrowser defaults**, you can simply use this snippet to create and display the browser:
+First, you need to add some sprite sheets. You tipically put this code in the "Loading…" section of your scene.
 
-	TSMiniWebBrowser *webBrowser = [[TSMiniWebBrowser alloc] initWithUrl:[NSURL URLWithString:@"http://indiedevstories.com"]];
-	[self.navigationController pushViewController:webBrowser animated:YES];
+	[[TSSpriteSheetManager sharedInstance] addSpriteSheetWithFile:@"all_head_spritesheet.plist" andTextureFormat:@"png"];
 
-If you prefer, you may **customize** the browser behavior. There is also a **simple Demo app** within the project. To test the tab bar mode go to the `application: didFinishLaunchingWithOptions:` method in `AppDelegate.m` and set the `BOOL wantTabBarDemo = NO;` value to `YES`.
+Then, to add a sprite to a node use this snippet:
 
-	TSMiniWebBrowser *webBrowser = [[TSMiniWebBrowser alloc] initWithUrl:[NSURL URLWithString:@"http://indiedevstories.com"]];
-    webBrowser.showURLStringOnActionSheetTitle = YES;
-    webBrowser.showPageTitleOnTitleBar = YES;
-    webBrowser.showActionButton = YES;
-    webBrowser.showReloadButton = YES;
-    webBrowser.mode = TSMiniWebBrowserModeNavigation;
+	CCSprite *head1 = [[TSSpriteSheetManager sharedInstance] addSpriteWithFileOrFrame:@"chuck_head__1.png" toNode:self autoBatching:YES];
+	head1.position = screenCenter;
+        
+As you can see, the `addSpriteWithFileOrFrame:toNode:autoBatching:` method adds the sprite automatically to the provided node. This is slightly different from the usual cocos2d workflow. However, this is needed to perform the automatic batching of the sprite.
 
-    webBrowser.barStyle = UIBarStyleBlack;
+TSSpriteSheetManager offers an additional method:
 
-    if (webBrowser.mode == TSMiniWebBrowserModeModal) {
-        webBrowser.modalDismissButtonTitle = @"Home";
-        [self presentModalViewController:webBrowser animated:YES];
-    } else if(webBrowser.mode == TSMiniWebBrowserModeNavigation) {
-        [self.navigationController pushViewController:webBrowser animated:YES];
-    }
+	-(CCSprite*) spriteWithFileOrFrame:(NSString*)filename;
+
+You may use this method if you prefer to ignore all the automatic batching stuff, but still benefit from transparent loading of `CCSprites` from individual files or sprite sheets (see *Limitations* section below).
 
 As usual, very easy to use ;)
 
-## Adding TSMiniWebBrowser into your Xcode 4 project
+## Adding TSSpriteSheetManager into your Xcode 4 project
 
-To add the TSMiniWebBrowser component to your project you simply need to drag & drop the entire “TSMiniWebBrowser” folder. There are only two files, apart from the icon images.
+To add the TSSpriteSheetManager component to your project you simply need to drag & drop the entire “TSSpriteSheetManager” folder. There are only two files.
 
-This project uses **ARC**.
+## Limitations
+
+* **CCMenu**. Due to the particular nature of `CCMenu` you are not allowed to add `CCSpriteBatchNodes` to it. You can only add `CCSprites` to a `CCMenu`. So you can't use the `addSpriteWithFileOrFrame:toNode:autoBatching:` method. However, you are still allowed to use `spriteWithFileOrFrame:` to just get the `CCSprite` and then add it to your `CCMenu` in the usual way.
+* TSSpriteSheetManager uses cocos2d tags to manage the needed nodes for automatic batching. By default, the first `CCSpriteBatchNode` is created with the tag *9999*. Take it into account to avoid collisions with your own nodes. You can change this default value by modifying the value of the constant `kBatchNodesFirstTag` at the top of the `TSSpriteSheetManager.m` file.
 
 ## Licence
 
