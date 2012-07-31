@@ -151,6 +151,8 @@
 		E231D76515C7CC3C009B2FB8 /* gamera_head_spritesheet-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E231D75915C7CC3C009B2FB8 /* gamera_head_spritesheet-hd.png */; };
 		E231D76615C7CC3C009B2FB8 /* gamera_head_spritesheet.plist in Resources */ = {isa = PBXBuildFile; fileRef = E231D75A15C7CC3C009B2FB8 /* gamera_head_spritesheet.plist */; };
 		E231D76715C7CC3C009B2FB8 /* gamera_head_spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = E231D75B15C7CC3C009B2FB8 /* gamera_head_spritesheet.png */; };
+		E299A99515C7CFC900F02D45 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E299A99315C7CFC900F02D45 /* background-hd.png */; };
+		E299A99615C7CFC900F02D45 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E299A99415C7CFC900F02D45 /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -432,6 +434,8 @@
 		E231D75915C7CC3C009B2FB8 /* gamera_head_spritesheet-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gamera_head_spritesheet-hd.png"; sourceTree = "<group>"; };
 		E231D75A15C7CC3C009B2FB8 /* gamera_head_spritesheet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = gamera_head_spritesheet.plist; sourceTree = "<group>"; };
 		E231D75B15C7CC3C009B2FB8 /* gamera_head_spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamera_head_spritesheet.png; sourceTree = "<group>"; };
+		E299A99315C7CFC900F02D45 /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-hd.png"; path = "Resources/background-hd.png"; sourceTree = "<group>"; };
+		E299A99415C7CFC900F02D45 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +513,8 @@
 		E20B0AA115C7B96C0052AA0C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E299A99315C7CFC900F02D45 /* background-hd.png */,
+				E299A99415C7CFC900F02D45 /* background.png */,
 				E231D74F15C7CC3C009B2FB8 /* spritesheets */,
 				E20B0AA215C7B96C0052AA0C /* Default.png */,
 				E20B0AA415C7B96C0052AA0C /* Default-Landscape~ipad.png */,
@@ -978,6 +984,8 @@
 				E231D76515C7CC3C009B2FB8 /* gamera_head_spritesheet-hd.png in Resources */,
 				E231D76615C7CC3C009B2FB8 /* gamera_head_spritesheet.plist in Resources */,
 				E231D76715C7CC3C009B2FB8 /* gamera_head_spritesheet.png in Resources */,
+				E299A99515C7CFC900F02D45 /* background-hd.png in Resources */,
+				E299A99615C7CFC900F02D45 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
