@@ -40,13 +40,13 @@ static TSSpriteSheetManager *singletonDelegate = nil;
 + (TSSpriteSheetManager *)sharedInstance {
 	@synchronized(self) {
 		if (singletonDelegate == nil) {
-			[[self alloc] init]; // assignment not done here
+			singletonDelegate = [[self alloc] init]; // assignment not done here
 		}
 	}
 	return singletonDelegate;
 }
 
-+ (id)allocWithZone:(NSZone *)zone {
+/*+ (id)allocWithZone:(NSZone *)zone {
 	@synchronized(self) {
 		if (singletonDelegate == nil) {
 			singletonDelegate = [super allocWithZone:zone];
@@ -56,7 +56,7 @@ static TSSpriteSheetManager *singletonDelegate = nil;
 	}
 	// on subsequent allocation attempts return nil
 	return nil;
-}
+}*/
 
 - (id)copyWithZone:(NSZone *)zone {
 	return self;
