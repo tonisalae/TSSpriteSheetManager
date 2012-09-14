@@ -66,7 +66,7 @@ static TSSpriteSheetManager *singletonDelegate = nil;
 	return self;
 }
 
-- (unsigned)retainCount {
+- (unsigned long)retainCount {
 	return UINT_MAX;  // denotes an object that cannot be released
 }
 
@@ -176,6 +176,15 @@ static TSSpriteSheetManager *singletonDelegate = nil;
     // if the texture is not in any spritesheet, add the sprite directly to the parent node.
     sprite = [CCSprite spriteWithFile:filename];
     [parentNode addChild:sprite];
+    
+    return sprite;
+}
+
+-(CCSprite*) addSpriteWithFileOrFrame:(NSString*)filename toNode:(CCNode*)parentNode z:(int)z autoBatching:(BOOL)autoBatching
+{
+    CCSprite *sprite = [self addSpriteWithFileOrFrame:filename toNode:parentNode autoBatching:autoBatching];
+    
+    sprite.zOrder = z;
     
     return sprite;
 }
