@@ -66,7 +66,7 @@ static TSSpriteSheetManager *singletonDelegate = nil;
 	return self;
 }
 
-- (unsigned long)retainCount {
+- (NSUInteger)retainCount {
 	return UINT_MAX;  // denotes an object that cannot be released
 }
 
